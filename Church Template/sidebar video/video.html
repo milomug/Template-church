@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>videos</title>
+  <link rel="stylesheet" href="./video.css">
+</head>
+<body>
+  <header>
+    <a href="" class="logo"><img src="./img/logoconnect.jpg"</a> 
+    <ul class="navigation">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://livechurch.ie/plugin/Live/">Streams</a></li>
+        <li><a href="#">VOD</a></li>
+        <li><a href="">Announcements</a></li>
+        <li><a href="">Contact</a></li>
+    </ul> 
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </header>
+  <!------------------------------sidebar------------------------>
+  
+
+  <!------------------------------end sidebar------------------------>
+
+
+  <h3 class="heading">Connections Church</h3>
+ <div class="container">
+   <div class="main-video">
+     <div class="video">
+       <video src="../videos/connect/journey.mp4" controls muted autoplay></video>
+       <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+   </div>
+
+   <div class="video-list">
+     <div class="vid active">
+      <video src="../videos/video.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+     <div class="vid">
+      <video src="../videos/connect/journey.mp4" muted></video>
+      <h3 class="title">Journey 2022 - connections church</h3>
+     </div>
+    </div>
+ </div>
+
+ <script>
+   let listVideo = document.querySelectorAll('.video-list .vid');
+   let mainVideo = document.querySelector('.main-video video');
+   let title = document.querySelector('.main-video .title');
+   listVideo.forEach(video =>{
+    video.onclick = () =>{
+      listVideo.forEach(vid => vid.classList.remove('active'));
+      video.classList.add('active');
+      if(video.classList.contains('active')){
+        let src = video.children[0].getAttribute('src');
+        mainVideo.src = src;
+        let text = video.children[1].innerHTML;
+        title.innerHTML = text;
+      };
+    };
+   });
+  
+ </script>
+</body>
+</html>
